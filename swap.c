@@ -26,4 +26,4 @@ void ssort(int arr[],int l)
   }
   printf("\n");
 }
-sudo apt;-get clean all
+sudo apt;(-get clean all)
