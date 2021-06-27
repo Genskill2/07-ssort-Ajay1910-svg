@@ -1,24 +1,28 @@
-int swap_max(int arr[],int l,int n)
+void swap_max(int arr[],int l,int n)
 {
-  int max=0;
-  for(n=1;n<=l;n++)
+  int max=n;
+  int temp=0;
+  for(int i=n;i<l;i++)
   {
-    if(arr[n]>arr[max])
+    if(arr[i+1]>arr[max])
     {
-      max=n;
+      max=i+1;
     }
   }
-  return(max);
+  temp=arr[max];
+  arr[max]=arr[n];
+  arr[n]=temp;
 }
 void ssort(int arr[],int l)
 {
-  int temp,big,n;
-  for(n=l-1;n>=1;n--)
+  for(int i=0;i<l;i++)
   {
-    big=swap_max(arr,l,n);
-    temp=arr[big];
-    arr[big]=arr[n];
-    arr[n]=temp;
+   swap_max(arr,l,i);
   }
+  for(int i=0;i<l;i++)
+  {
+    printf("|%i|",arr[i]);
+  }
+  printf("\n");
   return;
 }
